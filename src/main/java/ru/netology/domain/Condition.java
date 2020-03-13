@@ -1,4 +1,4 @@
-package ru.netology;
+package ru.netology.domain;
 
 public class Condition {
     private String name;
@@ -56,7 +56,7 @@ public class Condition {
 
 
     public void increaseCurrentTemperature() {
-        if (currentTemperature >= maxTemperature) {
+        if (currentTemperature == maxTemperature) {
             return;
         }
         while (currentTemperature < maxTemperature) {
@@ -66,7 +66,7 @@ public class Condition {
     }
 
     public void decreaseCurrentTemperature() {
-        if (currentTemperature <= minTemperature) {
+        if (currentTemperature == minTemperature) {
             return;
         }
         while (currentTemperature > minTemperature) {
