@@ -56,45 +56,41 @@ public class Radio {
         this.minVolume = minVolume;
     }
 
-    public int increaseVolume() {
+    public void increaseVolume() {
         if (currentVolume == maxVolume) {
-            return currentVolume;
+            return;
         } else {
             currentVolume += 1;
-            return currentVolume;
         }
     }
 
-    public int decreaseVolume() {
+    public void decreaseVolume() {
         if (currentVolume == minVolume) {
-            return currentVolume;
+            return;
         } else {
             currentVolume -= 1;
-            return currentVolume;
         }
     }
 
-    public int changeStationByNumericKeyPad(int selectedStation){
+    public void changeStationByNumericKeyPad(int selectedStation) {
         currentStation = selectedStation;
-        return currentStation;
+
     }
 
-    public int changeStationByNextButton() {
+    public void changeStationByNextButton() {
         if (currentStation == maxStation) {
-            return minStation;
+            currentStation = minStation;
         } else {
             currentStation += 1;
-            return currentStation;
         }
     }
 
-    public int changeStationByPervButton() {
+    public void changeStationByPervButton() {
         if (currentStation == minStation) {
-            return maxStation;
+            currentStation = maxStation;
         } else {
             currentStation -= 1;
-            return currentStation;
+
         }
     }
-
 }

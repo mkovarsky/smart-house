@@ -51,21 +51,16 @@ public class Condition {
     public void increaseCurrentTemperature() {
         if (currentTemperature == maxTemperature) {
             return;
+        } else {
+            currentTemperature += 1;
         }
-        do {
-            currentTemperature = currentTemperature + 1;
-        } while (currentTemperature < maxTemperature);
-
-
     }
 
     public void decreaseCurrentTemperature() {
         if (currentTemperature == minTemperature) {
             return;
+        } else {
+            currentTemperature -= 1;
         }
-        do {
-            currentTemperature = currentTemperature - 1;
-        } while (currentTemperature > minTemperature);
-
     }
 }

@@ -11,7 +11,8 @@ class RadioTest {
         Radio radio = new Radio();
         radio.setCurrentVolume(5);
         radio.setMaxVolume(10);
-        assertEquals(6, radio.increaseVolume());
+        radio.increaseVolume();
+        assertEquals(6, radio.getCurrentVolume());
     }
 
     @Test
@@ -19,7 +20,8 @@ class RadioTest {
         Radio radio = new Radio();
         radio.setCurrentVolume(10);
         radio.setMaxVolume(10);
-        assertEquals(10, radio.increaseVolume());
+        radio.increaseVolume();
+        assertEquals(10, radio.getCurrentVolume());
     }
 
     @Test
@@ -27,7 +29,8 @@ class RadioTest {
         Radio radio = new Radio();
         radio.setCurrentVolume(4);
         radio.setMinVolume(0);
-        assertEquals(3, radio.decreaseVolume());
+        radio.decreaseVolume();
+        assertEquals(3, radio.getCurrentVolume());
 
     }
 
@@ -36,7 +39,8 @@ class RadioTest {
         Radio radio = new Radio();
         radio.setCurrentVolume(0);
         radio.setMinVolume(0);
-        assertEquals(0, radio.decreaseVolume());
+        radio.decreaseVolume();
+        assertEquals(0, radio.getCurrentVolume());
     }
 
     @Test
@@ -51,7 +55,8 @@ class RadioTest {
         Radio radio = new Radio();
         radio.setCurrentStation(7);
         radio.setMaxStation(9);
-        assertEquals(8, radio.changeStationByNextButton());
+        radio.changeStationByNextButton();
+        assertEquals(8, radio.getCurrentStation());
     }
 
     @Test
@@ -60,7 +65,8 @@ class RadioTest {
         radio.setCurrentStation(9);
         radio.setMaxStation(9);
         radio.setMinStation(0);
-        assertEquals(0, radio.changeStationByNextButton());
+        radio.changeStationByNextButton();
+        assertEquals(0, radio.getCurrentStation());
     }
 
     @Test
@@ -68,7 +74,8 @@ class RadioTest {
         Radio radio = new Radio();
         radio.setCurrentStation(3);
         radio.setMinStation(0);
-        assertEquals(2, radio.changeStationByPervButton());
+        radio.changeStationByPervButton();
+        assertEquals(2, radio.getCurrentStation());
     }
 
     @Test
@@ -77,6 +84,7 @@ class RadioTest {
         radio.setCurrentStation(0);
         radio.setMinStation(0);
         radio.setMaxStation(9);
-        assertEquals(9, radio.changeStationByPervButton());
+        radio.changeStationByPervButton();
+        assertEquals(9, radio.getCurrentStation());
     }
 }
