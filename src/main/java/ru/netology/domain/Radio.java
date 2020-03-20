@@ -8,6 +8,21 @@ public class Radio {
     private int maxVolume;
     private int minVolume;
 
+    //Костурктор без аргументов
+    public Radio() {
+
+    }
+
+    //Конструктор со всеми аргументами
+    public Radio(int currentStation, int maxStation, int minStation, int currentVolume, int maxVolume, int minVolume) {
+        this.currentStation = currentStation;
+        this.maxStation = maxStation;
+        this.minStation = minStation;
+        this.currentVolume = currentVolume;
+        this.maxVolume = maxVolume;
+        this.minVolume = minVolume;
+    }
+
     public int getCurrentStation() {
         return currentStation;
     }
