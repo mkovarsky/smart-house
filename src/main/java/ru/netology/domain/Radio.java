@@ -1,12 +1,12 @@
 package ru.netology.domain;
 
 public class Radio {
-    private int currentStation;
-    private int maxStation;
-    private int minStation;
-    private int currentVolume;
-    private int maxVolume;
-    private int minVolume;
+    private int currentStation = 5;
+    private int maxStation = 10;
+    private int minStation = 0;
+    private int currentVolume = 50;
+    private int maxVolume = 100;
+    private int minVolume = 0;
 
     //Костурктор без аргументов
     public Radio() {
@@ -88,8 +88,11 @@ public class Radio {
     }
 
     public void changeStationByNumericKeyPad(int selectedStation) {
-        currentStation = selectedStation;
-
+        if (selectedStation > maxStation)  {
+            return;
+        } else {
+            currentStation = selectedStation;
+        }
     }
 
     public void changeStationByNextButton() {

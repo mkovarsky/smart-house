@@ -35,10 +35,17 @@ class RadioTest {
     }
 
     @Test
-    void changeStationByNumericKeyPad() {
+    void changeValidStationByNumericKeyPad() {
         Radio radio = new Radio();
         radio.changeStationByNumericKeyPad(3);
         assertEquals(3, radio.getCurrentStation());
+    }
+
+    @Test
+    void changeStationAboveMaxByNumericKeyPad() {
+        Radio radio = new Radio();
+        radio.changeStationByNumericKeyPad(30);
+        assertEquals(5, radio.getCurrentStation());
     }
 
     @Test
